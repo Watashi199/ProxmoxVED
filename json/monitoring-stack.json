@@ -38,7 +38,7 @@
       "type": "info"
     },
     {
-      "text": "Prometheus, Loki, Alertmanager, node_exporter, and Alloy are configured for local-only access by default.",
+      "text": "Grafana, Prometheus, and Alertmanager are exposed on the container IP; Loki, node_exporter, and Alloy remain local-only.",
       "type": "info"
     },
     {
