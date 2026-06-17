@@ -423,9 +423,12 @@ msg_ok "Created Services"
 
 msg_info "Configuring Grafana"
 retries=0
-while ! grafana-cli admin reset-admin-password "${GRAFANA_PASSWORD}" &>/dev/null; do
+while ! grafana-cli --homepath /usr/share/grafana admin reset-admin-password "${GRAFANA_PASSWORD}" &>/dev/null; do
   retries=$((retries + 1))
-  [[ ${retries} -ge 30 ]] && break
+  if [[ ${retries} -ge 30 ]]; then
+    msg_error "Failed to reset Grafana admin password"
+    exit 1
+  fi
   sleep 2
 done
 $STD systemctl restart grafana-server
