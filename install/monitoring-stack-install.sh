@@ -336,7 +336,7 @@ Wants=network.target
 [Service]
 Type=simple
 User=root
-ExecStart=/usr/bin/prometheus --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/var/lib/prometheus --web.console.templates=/usr/share/prometheus/consoles --web.console.libraries=/usr/share/prometheus/console_libraries --web.listen-address=127.0.0.1:${PROMETHEUS_PORT}
+ExecStart=/usr/bin/prometheus --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/var/lib/prometheus --web.console.templates=/usr/share/prometheus/consoles --web.console.libraries=/usr/share/prometheus/console_libraries --web.listen-address=0.0.0.0:${PROMETHEUS_PORT}
 Restart=on-failure
 RestartSec=5
 
@@ -353,7 +353,7 @@ Wants=network.target
 [Service]
 Type=simple
 User=root
-ExecStart=/usr/bin/prometheus-alertmanager --config.file=/etc/alertmanager/alertmanager.yml --storage.path=/var/lib/alertmanager --web.listen-address=127.0.0.1:${ALERTMANAGER_PORT}
+ExecStart=/usr/bin/prometheus-alertmanager --config.file=/etc/alertmanager/alertmanager.yml --storage.path=/var/lib/alertmanager --web.listen-address=0.0.0.0:${ALERTMANAGER_PORT}
 Restart=on-failure
 RestartSec=5
 
