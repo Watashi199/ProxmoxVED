@@ -5,7 +5,7 @@ source <(curl -fsSL "${COMMUNITY_SCRIPTS_URL:-https://raw.githubusercontent.com/
 # License: MIT | https://github.com/community-scripts/ProxmoxVED/raw/main/LICENSE
 # Source: https://grafana.com/
 
-APP="Monitoring Stack"
+APP="monitoring-stack"
 var_tags="${var_tags:-monitoring;analytics;logging}"
 var_cpu="${var_cpu:-4}"
 var_ram="${var_ram:-4096}"
