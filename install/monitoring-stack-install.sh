@@ -177,10 +177,10 @@ route:
   group_wait: 30s
   group_interval: 5m
   repeat_interval: 3h
-  receiver: null
+  receiver: default-receiver
 
 receivers:
-  - name: null
+  - name: default-receiver
 EOF
 fi
 msg_ok "Configured Alertmanager"
