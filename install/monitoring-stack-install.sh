@@ -412,7 +412,6 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 
-systemctl daemon-reload
 systemctl enable -q --now prometheus
 systemctl enable -q --now prometheus-alertmanager
 systemctl enable -q --now prometheus-node-exporter
