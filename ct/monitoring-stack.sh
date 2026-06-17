@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVED/main/misc/build.func)
+source <(curl -fsSL "${COMMUNITY_SCRIPTS_URL:-https://raw.githubusercontent.com/community-scripts/ProxmoxVED/main}/misc/build.func")
 # Copyright (c) 2021-2026 community-scripts ORG
 # Author: OpenAI Codex (GPT-5)
 # License: MIT | https://github.com/community-scripts/ProxmoxVED/raw/main/LICENSE
@@ -41,5 +41,11 @@ description
 
 msg_ok "Completed Successfully!\n"
 echo -e "${CREATING}${GN}${APP} setup has been successfully initialized!${CL}"
-echo -e "${INFO}${YW} Access it using the following URL:${CL}"
+echo -e "${INFO}${YW} Access Grafana using the following URL:${CL}"
 echo -e "${TAB}${GATEWAY}${BGN}http://${IP}:3000${CL}"
+echo -e "${INFO}${YW} Internal services available inside the LXC:${CL}"
+echo -e "${TAB}${BGN}Prometheus:${CL} http://127.0.0.1:9090"
+echo -e "${TAB}${BGN}Alertmanager:${CL} http://127.0.0.1:9093"
+echo -e "${TAB}${BGN}Loki:${CL} http://127.0.0.1:3100"
+echo -e "${TAB}${BGN}Node Exporter:${CL} http://127.0.0.1:9100"
+echo -e "${TAB}${BGN}Alloy:${CL} http://127.0.0.1:12345"
