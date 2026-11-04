@@ -1,0 +1,49 @@
+{
+  "name": "Silo",
+  "slug": "silo",
+  "categories": [
+    13
+  ],
+  "date_created": "2026-11-04",
+  "type": "ct",
+  "updateable": true,
+  "privileged": false,
+  "interface_port": 8080,
+  "documentation": "https://github.com/Silo-Server/silo-server/tree/main/docs",
+  "website": "https://github.com/Silo-Server/silo-server",
+  "repository": "https://github.com/Silo-Server/silo-server",
+  "logo": "https://raw.githubusercontent.com/Silo-Server/silo-server/main/assets/icon.png",
+  "description": "Silo is a self-hosted media server for films, series, audiobooks, ebooks, podcasts and manga. It direct-plays, remuxes or transcodes with VA-API, Quick Sync and NVENC, and exposes Jellyfin/Emby- and Audiobookshelf-compatible APIs for existing clients.",
+  "install_methods": [
+    {
+      "type": "default",
+      "script": "ct/silo.sh",
+      "config_path": "/opt/silo_data/.env",
+      "resources": {
+        "cpu": 4,
+        "ram": 4096,
+        "hdd": 20,
+        "os": "Debian",
+        "version": "13"
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [
+    {
+      "text": "Silo is pre-release and tracks the main branch. Back up the container before every update.",
+      "type": "warning"
+    },
+    {
+      "text": "Back up SECRET_KEY from /opt/silo_data/.env separately: without it, stored credentials cannot be recovered.",
+      "type": "warning"
+    },
+    {
+      "text": "Mount your media into the container, then create the admin account on first visit. Jellyfin clients connect on port 8096, Audiobookshelf clients on 13378.",
+      "type": "info"
+    }
+  ]
+}
