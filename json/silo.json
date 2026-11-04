@@ -21,7 +21,7 @@
       "config_path": "/opt/silo_data/.env",
       "resources": {
         "cpu": 4,
-        "ram": 4096,
+        "ram": 8192,
         "hdd": 20,
         "os": "Debian",
         "version": "13"
